@@ -24,7 +24,13 @@ class Analyzer:
     
 
 if __name__ == "__main__":
-    analyze = Analyzer("Enter your VT API Key here")
+    # Reading the "secret.json" file for finding its key
+    with open('secret.json', 'r') as file:
+        _r = json.loads(file.read())
+        file.close()
+    
+    # Scan
+    analyze = Analyzer(_r["apiKey"])
     
     # Read Stats
     with open('stats.json', 'r') as file:
