@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     
     # Get File Scan
-    filescan = analyze.getfilereport("564ab8c4e85be79b294c730a783490c743c6e3cbdd0014f2895ae0f761fc303e")
+    filescan = analyze.getfilereport(input('Scan ID: '))
     #print(filescan["data"]["attributes"]["last_analysis_results"]["Gridinsoft"]["category"])
     for av in filescan["data"]["attributes"]["last_analysis_results"]:
         if filescan["data"]["attributes"]["last_analysis_results"][av]["category"] == "malicious":
